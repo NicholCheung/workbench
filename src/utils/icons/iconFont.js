@@ -1,5 +1,6 @@
-import config from '@config/app'
+import { configGetter } from '@utils/helper'
 import { createFromIconfontCN } from '@ant-design/icons';
 
 const defaultUrl = '//at.alicdn.com/t/font_2064533_ton7c6coyyg.js'
-export default createFromIconfontCN({scriptUrl: !config.iconfontUrl || config.iconfontUrl === ''? defaultUrl : config.iconfontUrl});
+const iconfontUrl = configGetter('app->iconfontUrl')
+export default createFromIconfontCN({scriptUrl: !iconfontUrl || iconfontUrl === ''? defaultUrl : iconfontUrl});

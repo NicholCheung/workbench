@@ -3,7 +3,6 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Loader from '@utils/loader'
 import { hasPermissionForUrl } from '@utils/auth'
 import { configGetter } from '@utils/helper'
-import routesConfig from '@config/route'
 
 const defaultExact = true
 const defaultType = 'route'
@@ -39,7 +38,7 @@ const build = routes => {
                         hasPermissionForUrl(curr.auth.url) ? (
                             <Component />
                         ) : (
-                            <Redirect to={configGetter('app', 'authenticationFailedReplaceUrl')} />
+                            <Redirect to={configGetter('app->authenticationFailedReplaceUrl')} />
                         )
                     )} />
                     : <Route {...props} component={Component} />
@@ -59,7 +58,7 @@ const RouterContainer = () => {
     return (
         <HashRouter>
             <Switch>
-                {build(routesConfig)}
+                {build(configGetter('route'))}
             </Switch>
         </HashRouter>
     )

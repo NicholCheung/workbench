@@ -6,7 +6,6 @@ import { AuthComponent } from '@utils/auth'
 
 
 const Home = props => {
-    configGetter()
     return (
         <LayoutContainer>
             <AuthComponent auth='button_10086' component={

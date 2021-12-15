@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import AutoIcon from '@utils/icons/autoIcon'
 import styles from './layout.less'
-import routesConfig from '@src/config/route'
 import { hasPermissionForMenu } from '@utils/auth'
+import { configGetter } from '@utils/helper'
 
 
 
@@ -63,14 +63,20 @@ const buildMenu = routes => {
 
 const Sider = props => {
     // 计算当前默认展开的submenu以及默认选中的menu
-    const { collapsed = false, hideDefaultOpenKeys = true, match: { path: url = '' } } = props, urlSplitedArr = url.split('/')
+    const {
+        collapsed = false,
+        hideDefaultOpenKeys = true,
+        match: { path: url = '' }
+    } = props
+        , urlSplitedArr = url.split('/')
+
     urlSplitedArr.shift()
     let defaultOpenKeys = [], defaultSelectedKeys = []
     for (let i = 0, length = urlSplitedArr.length; i < length; i++) {
         var lastestSplicedUrl = `${defaultOpenKeys.slice(-1)}/${urlSplitedArr.shift()}`
         urlSplitedArr.length > 0 ? defaultOpenKeys.push(lastestSplicedUrl) : defaultSelectedKeys.push(lastestSplicedUrl)
     }
-
+    
     return (
         <Layout.Sider className={styles.sider} collapsed={collapsed}>
             <Menu
@@ -79,7 +85,7 @@ const Sider = props => {
                 defaultSelectedKeys={defaultSelectedKeys}
                 triggerSubMenuAction='click'
             >
-                {buildMenu(routesConfig)}
+                {buildMenu(configGetter('route'))}
             </Menu>
         </Layout.Sider>
     )

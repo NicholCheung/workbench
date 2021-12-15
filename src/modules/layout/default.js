@@ -9,7 +9,7 @@ import MainContent from './components/content'
 import { setStorage, getStorage, configGetter } from '@utils/helper'
 
 const DefaultLayout = withRouter(props => {
-    const siderCollapsedSaver = configGetter('app', 'siderCollapsedSaver', 'sessionStorage')
+    const siderCollapsedSaver = configGetter('app->siderCollapsedSaver', 'sessionStorage')
     const isSiderMenuCollapsedCache = getStorage(siderCollapsedSaver, 'r_time.is_sm_c')
     const [S_isCollapsed, S_setIsSiderMenuCollapsed] = useState(isSiderMenuCollapsedCache === undefined ? false : isSiderMenuCollapsedCache)
 

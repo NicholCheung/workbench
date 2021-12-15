@@ -1,13 +1,15 @@
-import authConfig from '@config/auth'
+import { configGetter } from '@utils/helper'
 
 // 虚拟数据，实际上是获取从后端返回的权限点列表
 const xunishuju = {
     u: ['*', 'uh1p', 'udos1'],
-    m: ['*', 'm0', 'm1', 'm2'],
+    m: ['m0', 'm1', 'm2', 'm3', 'm21'],
     c: ['c1', 'c2']
 }
 
-const hasPermission = (type, name) => xunishuju[type].indexOf('*') > -1 || xunishuju[type].indexOf(authConfig[`${type}.${name}`]) > -1
+const hasPermission = (type, name) => {
+    return xunishuju[type].indexOf('*') > -1 || xunishuju[type].indexOf(configGetter(`auth->${type}.${name}`)) > -1
+}
 
 
 const componentAccessCache = {}

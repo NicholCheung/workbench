@@ -1,5 +1,5 @@
 /*
- * key: 唯一key
+ * key: 唯一key, 也用作路由url匹配
  * title: 中文描述
  * type: 路由类型, 'route': 常规路由 | 'redirect': 重定向路由
  * to: 重定向路由, 当type: redirect时, 指定重定向的目标
@@ -16,7 +16,7 @@
 export default {
     '/': {
         key: '/',
-        title: '概览',
+        title: '首页',
         icon: {
             type: 'icon-gailan',
             source: 'iconfont'
@@ -33,9 +33,9 @@ export default {
     /**************************************
      * 数据中心
      **************************************/
-    '/data/operation': {
-        key: '/data/operation',
-        title: '运营管理',
+    '/a/a1': {
+        key: '/a/a1',
+        title: 'A',
         icon: {
             type: 'icon-ziyuan',
             source: 'iconfont'
@@ -43,64 +43,44 @@ export default {
         menu: true,
         group: 'sider',
         children: {
-            '/data/operation/server': {
-                key: '/data/operation/server',
-                title: '服务器',
+            '/a/a1/a11': {
+                key: '/a/a1/a11',
+                title: 'A11',
                 menu: true,
                 group: 'sider',
-                component: 'operation/server',
+                component: 'a/a11',
                 auth: {
-                    url: 'data_operation_server',
-                    visible: 'sider_data_operation_server'
+                    url: 'a_a1_a11',
+                    visible: 'sider_a_a1_a11'
                 }
             },
-            '/data/operation/list': {
-                key: '/data/operation/list',
-                title: '产品列表',
+            '/a/a1/a12': {
+                key: '/a/a1/a12',
+                title: 'A12',
                 menu: true,
                 group: 'sider',
-                component: 'operation/list',
+                component: 'a/a12',
                 auth: {
-                    url: 'data_operation_list',
-                    visible: 'sider_data_operation_list'
+                    url: 'a_a1_a12',
+                    visible: 'sider_a_a1_a12'
                 }
             },
-            '/data/operation/analysis': {
-                key: '/data/operation/analysis',
-                title: '产品监控',
+            '/a/a1/a13': {
+                key: '/a/a1/a13',
+                title: 'A13',
                 menu: true,
                 group: 'sider',
-                component: 'operation/analysis',
+                component: 'a/a13',
                 auth: {
-                    url: 'data_operation_analysis',
-                    visible: 'sider_data_operation_analysis'
-                }
-            },
-            '/data/operation/center': {
-                key: '/data/operation/center',
-                title: '管理',
-                menu: true,
-                group: 'sider',
-                component: 'operation/center',
-                auth: {
-                    url: 'data_operation_center',
-                    visible: 'sider_data_operation_center'
-                }
-            },
-            '/data/operation/serverDetail': {
-                key: '/data/operation/serverDetail',
-                title: '服务器详情',
-                component: 'operation/serverDetail',
-                auth: {
-                    url: 'data_operation_serverDetail',
-                    visible: 'sider_data_operation_serverDetail'
+                    url: 'a_a1_a13',
+                    visible: 'sider_a_a1_a13'
                 }
             },
         }
     },
-    '/data/development': {
-        key: '/data/development',
-        title: '项目开发',
+    '/b/b1': {
+        key: '/b/b1',
+        title: 'B',
         icon: {
             type: 'icon-ziyuan',
             source: 'iconfont'
@@ -108,38 +88,15 @@ export default {
         menu: true,
         group: 'sider',
         children: {
-            '/data/development/list': {
-                key: '/data/development/list',
-                title: '列表',
+            '/b/b1/b11': {
+                key: '/b/b1/b11',
+                title: 'B11',
                 menu: true,
                 group: 'sider',
-                component: 'b/index',
+                component: 'b/b11',
                 auth: {
-                    url: 'data_development_list',
-                    visible: 'sider_data_development_list'
-                }
-            }
-        }
-    },
-    '/data/resource': {
-        key: '/data/resource',
-        title: '资源仓库',
-        icon: {
-            type: 'icon-ziyuan',
-            source: 'iconfont'
-        },
-        menu: true,
-        group: 'sider',
-        children: {
-            '/data/resource/list': {
-                key: '/data/resource/list',
-                title: '项目列表',
-                menu: true,
-                group: 'sider',
-                component: 'b/index',
-                auth: {
-                    url: 'data_resource_list',
-                    visible: 'sider_data_resource_list'
+                    url: 'b_b1_b11',
+                    visible: 'sider_b_b1_b11'
                 }
             }
         }

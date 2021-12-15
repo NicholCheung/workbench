@@ -6,7 +6,9 @@ export default {
     // 服务器
     'u.data_operation_server': 'udos1',
     'm.sider_homepage': 'm0',
-    'm.sider_data_operation_server': 'm1',
-    'm.sider_data_resource_list': 'm2',
+    'm.sider_a_a1_a11': 'm1',
+    'm.sider_a_a1_a12': 'm2',
+    'm.sider_a_a1_a13': 'm21',
+    'm.sider_b_b1_b11': 'm3',
     'c.button_10086': 'c1'
 }
