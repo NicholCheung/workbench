@@ -1,0 +1,145 @@
+.sider {
+    position: relative;
+    z-index: 998;
+    background-color: #FFF;
+    min-height: 100%;
+
+    :global(.ant-menu-inline) {
+        border-right: none;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 4.8rem;
+    line-height: 4.8rem;
+    background-color: #FFF;
+    padding: 0;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.08);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999;
+
+    .leftBar {
+        display: flex;
+        width: 200px;
+
+        .collapsedIconBtn {
+            width: 80px;
+            text-align: center;
+            font-size: 2.2rem;
+            cursor: pointer;
+
+            &.active {
+                background-color: #FF6A00;
+                color: #FFF;
+            }
+
+            &.inactive {
+                background-color: #F2F2F2;
+                color: #A3A3A3;
+            }
+        }
+
+        .logoContainer {
+            width: 120px;
+            padding: 8px;
+
+            .logo {
+                height: 100%;
+                background-color: #EEE;
+            }
+        }
+    }
+
+    .rightBar {
+        padding-right: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .avatar {
+            cursor: pointer;
+        }
+    }
+}
+
+.userinfoBar {
+    width: 200px;
+    background-color: #FFF;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.08);
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 40px;
+    }
+
+    .avatarBar {
+        width: 100%;
+        text-align: center;
+        padding-top: 2.4rem;
+        
+        .avatar {
+            width: 5.6rem;
+            height: 5.6rem;
+            font-size: 5.6rem;
+        }
+    }
+
+    .username {
+        width: 100%;
+        height: 3.2rem;
+        line-height: 3.2rem;
+        text-align: center;
+        padding: .4rem 0 .8rem 0;
+        border-bottom: 1px solid rgb(247, 247, 247);
+        box-sizing: initial;
+    }
+
+    .btnList {
+        ul {
+            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            // padding: 8px 0;
+
+            li {
+                width: 100%;
+                height: 4rem;
+                line-height: 4rem;
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(250, 250, 250);
+                }
+            }
+        }
+    }
+
+    .bottomBtn {
+        width: 100%;
+        height: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        background-color: rgb(247, 247, 247);
+        position: absolute;
+        cursor: pointer;
+        bottom: 0;
+        border-top: 1px solid #EBEBEB;
+
+        span {
+            color: rgb(255, 106, 0);
+        }
+
+        &:hover {
+            background-color: #EBEBEB;
+        }
+    }
+}

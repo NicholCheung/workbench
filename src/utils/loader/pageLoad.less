@@ -1,0 +1,36 @@
+@import "~@src/modules/base.less";
+
+.loadingContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        margin-top: -4rem;
+    }
+
+    .stateLoading {
+        font-size: 2.5rem;
+    }
+
+    .stateFail {
+        font-size: 8rem;
+    }
+
+    .label {
+        color: rgb(162, 196, 212);
+    }
+}
+
+.button {
+    margin-top: .5rem;
+
+    &.first {
+        margin-top: 1.5rem;
+    }
+}
